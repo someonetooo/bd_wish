@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fbe9f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.birthday-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.cake-section {
+    margin: 20px 0;
+}
+
+.cake-image {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.wishes-section {
+    margin: 30px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.audio-section {
+    margin: 20px 0;
+}
+
+.calendar-section {
+    margin: 40px 0;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#calendar div {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#calendar div:hover {
+    transform: scale(1.05);
+    background-color: #ffe4e1;
+}
