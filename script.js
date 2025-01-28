@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "2025-02-20": "Sometimes, it feels like you’re just a thought away. I hope your day is full of laughter.",
     "2025-02-21": "Miss that peace I found just by talking to you. Keep smiling, pretty girl.",
     "2025-02-22": "Every day spent without you reminds me of how precious time with you truly is. You are always in my thoughts.",
-    // Add more notes as needed
   };
 
   const calendarGrid = document.getElementById("calendar-grid");
@@ -22,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   while (startDate <= endDate) {
     const dateString = startDate.toISOString().split("T")[0];
     const dateDiv = document.createElement("div");
-    dateDiv.textContent = startDate.toDateString();
-    dateDiv.classList.add("calendar-cell"); // Use a specific class for styling
+    dateDiv.textContent = startDate.getDate();
+    dateDiv.classList.add("date-cell");
     if (notes[dateString]) {
       dateDiv.addEventListener("click", () => {
         noteText.textContent = notes[dateString];
@@ -47,9 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Track user visits
-  const visitHistory = JSON.parse(localStorage.getItem('visitHistory')) || [];
-  const currentVisit = new Date().toISOString();
+  // History Tracking
+  const visitHistory = JSON.parse(localStorage.getItem("visitHistory")) || [];
+  const currentVisit = new Date().toLocaleString();
   visitHistory.push(currentVisit);
-  localStorage.setItem('visitHistory', JSON.stringify(visitHistory));
+  localStorage.setItem("visitHistory", JSON.stringify(visitHistory));
 });
