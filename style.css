@@ -12,28 +12,13 @@ body {
   padding: 20px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  font-size: 3rem;
-  color: #ff5e6c;
-}
-
-.subheading {
-  font-size: 1.2rem;
-  color: #555;
-}
-
 .celebration {
   text-align: center;
   position: relative;
 }
 
 .cake {
-  width: 110%;
+  width: 100%;
   max-width: 440px;
   height: auto;
   border-radius: 15px;
@@ -102,33 +87,56 @@ header h1 {
 .calendar-grid div:hover {
   transform: translateY(-5px);
   background-color: #ffe7e7;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.hidden {
-  display: none;
+.calendar-grid div:active {
+  transform: translateY(1px);
 }
 
-.date-cell {
-  background-color: #f7f7f7;
+.calendar-grid div.selected {
+  background-color: #ff5e6c;
+  color: #fff;
 }
 
-.date-cell.empty {
-  background-color: #f0f0f0;
+.calendar-grid div.empty {
+  background-color: transparent;
+  box-shadow: none;
+  cursor: default;
 }
 
-.date-cell.has-note {
-  background-color: #ffddc1;
-  cursor: pointer;
+footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  padding: 20px;
+  background-color: #ffecec;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#note-modal {
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: #ff5e6c;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,18 +144,54 @@ header h1 {
 }
 
 .note-content {
-  background: white;
+  background: #fff;
   padding: 20px;
-  border-radius: 10px;
-  width: 70%;
-  max-width: 500px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: popup 0.3s ease-in-out;
+}
+
+.note-content p {
+  margin: 15px 0;
+  font-size: 1rem;
+  color: #333;
 }
 
 #close-modal {
-  font-size: 1.5rem;
-  color: #333;
-  cursor: pointer;
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+#close-modal:hover {
+  color: #ff5e6c;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .cake {
+    max-width: 100%;
+  }
 }
