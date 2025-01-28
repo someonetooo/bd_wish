@@ -12,79 +12,11 @@ body {
   padding: 20px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-header h1 {
-  font-size: 3rem;
-  color: #ff5e6c;
-}
-
-.subheading {
-  font-size: 1.2rem;
-  color: #555;
-}
-
-.celebration {
-  text-align: center;
-  position: relative;
-}
-
-.cake {
-  width: 110%;
-  max-width: 440px;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(255, 94, 108, 0.7);
-  transition: box-shadow 0.3s ease;
-}
-
-.cake:hover {
-  box-shadow: 0 12px 30px rgba(255, 94, 108, 0.8);
-}
-
-.wishes {
-  margin-top: 20px;
-  background: #ffecec;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.wishes h2 {
-  color: #ff5e6c;
-}
-
-.urdu-wish {
-  font-size: 1.2rem;
-  direction: rtl;
-  color: #555;
-  margin: 15px 0;
-}
-
-.english-wish {
-  font-size: 1.1rem;
-  color: #333;
-  margin: 15px 0;
-}
-
-.audio-message {
-  margin: 30px 0;
-  text-align: center;
-}
-
-.calendar {
-  margin-top: 40px;
-  text-align: center;
-}
-
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(7, 1fr);
   gap: 10px;
+  margin-top: 20px;
 }
 
 .calendar-grid div {
@@ -94,19 +26,8 @@ header h1 {
   text-align: center;
   font-weight: bold;
   font-size: 1rem;
-  transition: transform 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.calendar-grid div:hover {
-  transform: translateY(-5px);
-  background-color: #ffe7e7;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.calendar-grid div:active {
-  transform: translateY(1px);
 }
 
 .calendar-grid div.selected {
@@ -114,33 +35,8 @@ header h1 {
   color: #fff;
 }
 
-.calendar-grid div.empty {
-  background-color: transparent;
-  box-shadow: none;
-}
-
-footer {
-  margin-top: 50px;
-  text-align: center;
-  font-size: 1.1rem;
-  color: #555;
-  padding: 20px;
-  background-color: #ffecec;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-footer p {
-  margin: 5px 0;
-}
-
-footer a {
-  color: #ff5e6c;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+.hidden {
+  display: none;
 }
 
 /* Modal Styles */
@@ -164,37 +60,5 @@ footer a:hover {
   width: 80%;
   max-width: 400px;
   text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   animation: popup 0.3s ease-in-out;
-}
-
-.note-content p {
-  margin: 15px 0;
-  font-size: 1rem;
-  color: #333;
-}
-
-#close-modal {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-#close-modal:hover {
-  color: #ff5e6c;
-}
-
-@keyframes popup {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
