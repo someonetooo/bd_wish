@@ -76,9 +76,8 @@
         "2025-02-17": "We’ve had our ups and downs, but nothing can erase the beautiful moments... Stay happy, Jaweria.",
         "2025-02-18": "Still remember the first time we started talking. Hope you're having a good day.",
         "2025-02-19": "Through every distance and silence, my heart still finds its way to you. Keep shining, no matter the hurdles.",
-        "2025-02-20": "Sometimes, it feels like you’re just a thought away. I hope your day is full of laughter.",
-        "2025-02-21": "Miss that peace I found just by talking to you. Keep smiling, pretty girl.",
-        "2025-02-22": "Every day spent without you reminds me of how precious time with you truly is. You are always in my thoughts.",
+        "2025-02-20": "Miss that peace I found just by talking to you. Keep smiling, pretty girl.",
+        "2025-02-21": "Every day spent without you reminds me of how precious time with you truly is. You are always in my thoughts.",
       };
 
       const calendarGrid = document.getElementById("calendar-grid");
@@ -96,7 +95,9 @@
         dateDiv.textContent = startDate.toDateString();
         dateDiv.classList.add("date-cell");
 
+        // Show a note if it exists for this date
         if (notes[dateString]) {
+          dateDiv.classList.add("has-note");
           dateDiv.addEventListener("click", () => {
             noteText.textContent = notes[dateString];
             noteModal.classList.remove("hidden");
@@ -109,7 +110,7 @@
         startDate.setDate(startDate.getDate() + 1);
       }
 
-      // Close modal
+      // Close modal functionality
       closeModal.addEventListener("click", () => {
         noteModal.classList.add("hidden");
       });
@@ -120,7 +121,7 @@
         }
       });
 
-      // History tracking
+      // History tracking functionality
       if (localStorage.getItem("visited")) {
         console.log("User has visited before.");
       } else {
