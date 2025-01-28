@@ -1,5 +1,4 @@
-[2:17 PM, 1/28/2025] ~Naeem: .voice…
-[2:17 PM, 1/28/2025] ~Naeem: // Calendar Data (Hidden Notes)
+// Calendar Data (Hidden Notes)
 const notes = {
   "2025-02-15": "You are the light of my life. ❤️",
   "2025-03-01": "Every day with you is a blessing. 🌸",
