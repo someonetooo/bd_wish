@@ -3,49 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Jaweria</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Nastaliq+Urdu&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Happy Birthday Jaweria!</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Birthday Image Section -->
-  <section id="birthday-image">
-    <img src="image.webp" alt="Happy Birthday Jaweria">
-  </section>
+  <div class="container">
+    <!-- Birthday Image -->
+    <div class="image-container">
+      <img src="image.webp" alt="Birthday Decor" class="birthday-image">
+    </div>
 
-  <!-- Birthday Wish Section -->
-  <section id="birthday-wish">
-    <h1>Happy Birthday Jaweria!</h1>
-    <p class="urdu-text">
-      وقت تمہیں زندہ رکھے,<br>
-      بہاریں تم پر فدا ہو جائے,<br>
-      رحمتوں کے دروازے تم پر کھلیں اور انہیں کبھی بند ہونے کا حکم نہ ملے۔<br>
-      بے سکونی کا سایے اندھے اور بہرے ہو جائے,<br>
-      اور انہیں تم تک آنے کی راہ نہ دکھائی دے۔<br>
-      جنم دن مبارک ہو!
-    </p>
-    <p class="english-text">
-      Happy Birthday to the one who means the world to me. Today is all about celebrating you,
-      the beautiful soul that makes every day so much brighter. Have the most amazing birthday—you deserve nothing less!
-    </p>
-  </section>
+    <!-- Birthday Wish -->
+    <div class="wish-container">
+      <h1 class="urdu-wish">وقت تمہیں زندہ رکھے,<br>بہاریں تم پر فدا ہو جائے,<br>رحمتوں کے دروازے تم پر کھلیں اور انہیں کبھی بند ہونے کا حکم نہ ملے۔<br>بے سکونی کا سایے اندھے اور بہرے ہو جائے,<br>اور انہیں تم تک آنے کی راہ نہ دکھائی دے۔<br>جنم دن مبارک ہو!</h1>
+      <h2 class="english-wish">Happy Birthday to the one who means the world to me. Today is all about celebrating you, the beautiful soul that makes every day so much brighter. Have the most amazing birthday—you deserve nothing less!</h2>
+    </div>
 
-  <!-- Voice Note Section -->
-  <section id="voice-note">
-    <h2>My Message for You</h2>
-    <audio controls>
-      <source src="ForU.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </section>
+    <!-- Voice Note -->
+    <div class="voice-note-container">
+      <h3>My Message for You</h3>
+      <audio controls>
+        <source src="ForU.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
 
-  <!-- Calendar Section -->
-  <section id="calendar">
-    <h2>Daily Notes for You</h2>
-    <div id="calendar-grid"></div>
-  </section>
+    <!-- Calendar -->
+    <div class="calendar-container">
+      <h2>Daily Notes Calendar</h2>
+      <div id="calendar"></div>
+    </div>
 
-  <!-- Footer Section -->
+    <!-- Hidden Notes Popup -->
+    <div id="note-popup" class="popup">
+      <div class="popup-content">
+        <span id="close-popup">&times;</span>
+        <p id="note-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Birthday Wishes Website | Created by <strong>Naeem Ullah</strong></p>
     <p>Find me on <a href="https://github.com/naeemullah-datascientist" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/naeem-ullah-930890345/" target="_blank">LinkedIn</a></p>
