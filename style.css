@@ -1,5 +1,32 @@
-/* Fonts and Reset */  
-body {  
+/* Add this to your existing CSS to remove potential white box issues */  
+html, body {  
+  margin: 0;  
+  padding: 0;  
+  overflow-x: hidden;  
+}  
+
+.container {  
+  width: 100%;  
+  max-width: 900px;  
+  margin: 0 auto;  
+  padding: 20px;  
+  box-sizing: border-box;  
+}  
+
+#calendar-container {  
+  overflow-x: auto;  
+  max-width: 100%;  
+}  
+
+.calendar-grid {  
+  display: grid;  
+  grid-template-columns: repeat(7, 1fr);  
+  gap: 10px;  
+  width: 100%;  
+}  
+
+/* Rest of your existing CSS remains the same */
+ {  
   font-family: 'Poppins', sans-serif;  
   margin: 0;  
   padding: 0;  
