@@ -87,7 +87,7 @@ header h1 {
   gap: 10px;
 }
 
-.calendar-cell {
+.calendar-grid div {
   padding: 15px;
   background: #ffffff;
   border-radius: 12px;
@@ -99,49 +99,31 @@ header h1 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.calendar-cell:hover {
+.calendar-grid div:hover {
   transform: translateY(-5px);
   background-color: #ffe7e7;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.calendar-cell.empty {
-  background-color: transparent;
-  box-shadow: none;
+.hidden {
+  display: none;
 }
 
-footer {
-  margin-top: 50px;
-  text-align: center;
-  font-size: 1.1rem;
-  color: #555;
-  padding: 20px;
-  background-color: #ffecec;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.date-cell {
+  background-color: #f7f7f7;
 }
 
-footer p {
-  margin: 5px 0;
+.date-cell.empty {
+  background-color: #f0f0f0;
 }
 
-footer a {
-  color: #ff5e6c;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Modal Styles */
 #note-modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,43 +131,18 @@ footer a:hover {
 }
 
 .note-content {
-  background: #fff;
+  background: white;
   padding: 20px;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  animation: popup 0.3s ease-in-out;
-}
-
-.note-content p {
-  margin: 15px 0;
-  font-size: 1rem;
-  color: #333;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 500px;
 }
 
 #close-modal {
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
   position: absolute;
   top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-#close-modal:hover {
-  color: #ff5e6c;
-}
-
-@keyframes popup {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  right: 10px;
 }
