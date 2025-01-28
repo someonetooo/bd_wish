@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {  
   const notes = {  
-    "2025-02-15": "I hope today brings you the peace you deserve. Miss you!",  
-    "2025-02-16": "Each day without you feels incomplete...",  
-    // Add remaining notes here  
+    "2025-02-15": "I hope today brings you nothing but happiness. Always thinking of you!",  
+    "2025-02-16": "You're my sunshine on the darkest days!",  
+    "2025-02-17": "Remember, you're never alone. I'm always here for you.",  
+    // Add all notes here for each day till 2026-02-14...  
   };  
 
   const calendarWrapper = document.getElementById("calendar-wrapper");  
@@ -15,9 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const months = {};  
 
+  // Generate calendar data  
   while (startDate <= endDate) {  
-    const yearMonth = startDate.toISOString().slice(0, 7); // e.g., "2025-02"  
-    const dateString = startDate.toISOString().split("T")[0]; // e.g., "2025-02-15"  
+    const yearMonth = startDate.toISOString().slice(0, 7); // Get "2025-02"  
+    const dateString = startDate.toISOString().split("T")[0]; // Get "2025-02-15"  
 
     if (!months[yearMonth]) {  
       months[yearMonth] = [];  
@@ -28,9 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
       note: notes[dateString] || null,  
     });  
 
-    startDate.setDate(startDate.getDate() + 1);  
+    startDate.setDate(startDate.getDate() + 1); // Increment day  
   }  
 
+  // Render calendar  
   for (const [month, dates] of Object.entries(months)) {  
     const monthDiv = document.createElement("div");  
     monthDiv.className = "month";  
@@ -64,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     calendarWrapper.appendChild(monthDiv);  
   }  
 
+  // Close modal on click  
   closeModal.addEventListener("click", () => {  
     noteModal.style.display = "none";  
   });  
@@ -74,10 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }  
   });  
 
-  // Visit History  
+  // Record visit history in local storage  
   const visitHistory = JSON.parse(localStorage.getItem("visitHistory")) || [];  
   const currentVisit = new Date().toLocaleString();  
   visitHistory.push(currentVisit);  
   localStorage.setItem("visitHistory", JSON.stringify(visitHistory));  
-  console.log("Visit History:", visitHistory);  
 });
