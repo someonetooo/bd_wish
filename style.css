@@ -70,9 +70,10 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 10px;
+  padding: 10px;
 }
 
-.calendar-grid div {
+.calendar-grid .date-cell {
   padding: 15px;
   background: #ffffff;
   border-radius: 12px;
@@ -84,22 +85,17 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.calendar-grid div:hover {
+.calendar-grid .date-cell:hover {
   transform: translateY(-5px);
   background-color: #ffe7e7;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.calendar-grid div:active {
+.calendar-grid .date-cell:active {
   transform: translateY(1px);
 }
 
-.calendar-grid div.selected {
-  background-color: #ff5e6c;
-  color: #fff;
-}
-
-.calendar-grid div.empty {
+.calendar-grid .date-cell.empty {
   background-color: transparent;
   box-shadow: none;
   cursor: default;
@@ -143,7 +139,7 @@ footer a:hover {
   z-index: 1000;
 }
 
-.note-content {
+.modal-content {
   background: #fff;
   padding: 20px;
   border-radius: 15px;
@@ -154,7 +150,7 @@ footer a:hover {
   animation: popup 0.3s ease-in-out;
 }
 
-.note-content p {
+.modal-content p {
   margin: 15px 0;
   font-size: 1rem;
   color: #333;
