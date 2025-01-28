@@ -1,72 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personalized birthday wishes with audio messages, notes, and more!">
-  <title>Birthday Wishes</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <!-- Cake and Balloons Section -->
-    <section class="celebration">
-      <img src="image.webp" alt="Birthday Celebration with Cake and Balloons" class="cake">
-    </section>
+[11:34 AM, 1/28/2025] ~Naeem: document.addEventListener("DOMContentLoaded", () => {
+  const notes = {
+    "2025-02-15": "I hope today brings you the peace you deserve. Miss you!",
+    "2025-02-16": "Each day without you feels incomplete, but I carry your thoughts with me always. Wishing you a calm and beautiful day.",
+    "2025-02-17": "We’ve had our ups and downs, but nothing can erase the beautiful moments... Stay happy, Jaweria.",
+    "2025-02-18": "Still remember the first time we started talking. Hope you're having a good day.",
+    "2025-02-19": "Through every distance and silence, my heart still finds its way to you. Keep shining, no matter the hurdles.",
+    "2025-02-20": "Sometimes, it feels like you’re just a thought away. I hope your day is full of laughter.",
+    "2025-02-21"…
+[12:06 PM, 1/28/2025] ~Naeem: document.addEventListener("DOMContentLoaded", () => {
+  const notes = {
+    "2025-02-15": "I hope today brings you the peace you deserve. Miss you!",
+    "2025-02-16": "Each day without you feels incomplete, but I carry your thoughts with me always. Wishing you a calm and beautiful day.",
+    "2025-02-17": "We’ve had our ups and downs, but nothing can erase the beautiful moments... Stay happy, Jaweria.",
+    "2025-02-18": "Still remember the first time we started talking. Hope you're having a good day.",
+    "2025-02-19": "Through every distance and silence, my heart still finds its way to you. Keep shining, no matter the hurdles.",
+    "2025-02-20": "Sometimes, it feels like you’re just a thought away. I hope your day is full of laughter.",
+    "2025-02-21": "Miss that peace I found just by talking to you. Keep smiling, pretty girl.",
+    "2025-02-22": "Every day spent without you reminds me of how precious time with you truly is. You are always in my thoughts.",
+  };
 
-    <!-- Wishes Section -->
-    <section class="wishes">
-      <h2>My Wishes for You</h2>
-      <p class="urdu-wish">
-        وقت تمھیں زندہ رکھے,<br>
-        بہاریں تم پر فدا ہو جائیں,<br>
-        رحمتوں کے دروازے تم پر کھلیں<br>
-        اور انہیں کبھی بند ہونے کا حکم نہ ملے,<br>
-        بے سکونی کا سایہ اندھے اور بہرے ہو جائیں,<br>
-        اور انہیں تم تک آنے کی راہ نہ دکھائی دے,<br>
-        جنم دن مبارک ہو!
-      </p>
-      <p class="english-wish">
-        Happy Birthday to the one who means the world to me.<br>
-        Today is all about celebrating you, the beautiful soul that makes every day so much brighter.<br>
-        most amazing birthday—you deserve nothing less!
-      </p>
-    </section>
+  const calendarGrid = document.getElementById("calendar-grid");
+  const noteModal = document.getElementById("note-modal");
+  const noteText = document.getElementById("note-text");
+  const closeModal = document.getElementById("close-modal");
 
-    <!-- Audio Message Section -->
-    <section class="audio-message">
-      <p>Click below to hear my message for you:</p>
-      <audio controls>
-        <source src="ForU.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-      <p>This audio contains a heartfelt birthday message for you. Click play to listen!</p>
-    </section>
+  // Generate dates from Feb 15, 2025 to Feb 14, 2026
+  const startDate = new Date("2025-02-15");
+  const endDate = new Date("2026-02-14");
+  while (startDate <= endDate) {
+    const dateString = startDate.toISOString().split("T")[0];
+    const dateDiv = document.createElement("div");
+    dateDiv.textContent = startDate.getDate();
+    dateDiv.classList.add("date-cell");
+    if (notes[dateString]) {
+      dateDiv.addEventListener("click", () => {
+        noteText.textContent = notes[dateString];
+        noteModal.classList.remove("hidden");
+      });
+    } else {
+      dateDiv.classList.add("empty");
+    }
+    calendarGrid.appendChild(dateDiv);
+    startDate.setDate(startDate.getDate() + 1);
+  }
 
-    <!-- Calendar Section -->
-    <section class="calendar">
-      <h2>Daily Notes</h2>
-      <p>Remember the 365-day note jar? Here's its digital version!</p>
-      <div class="calendar-grid" id="calendar-grid"></div>
-      <p>In an endless garden of flowers, I will always pick you.</p>
-    </section>
-  </div>
+  // Close modal
+  closeModal.addEventListener("click", () => {
+    noteModal.classList.add("hidden");
+  });
 
-  <!-- Modal for Notes -->
-  <div id="note-modal" class="modal hidden">
-    <div class="modal-content">
-      <span id="close-modal">&times;</span>
-      <p id="note-text"></p>
-    </div>
-  </div>
-
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2025 Birthday Wishes Website | Created by <strong>Naeem Ullah</strong></p>
-    <p>Find me on <a href="https://github.com/naeemullah-datascientist" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/naeem-ullah-930890345/" target="_blank">LinkedIn</a></p>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="script.js"></script>
-</body>
-</html>
+  noteModal.addEventListener("click", (e) => {
+    if (e.target === noteModal) {
+      noteModal.classList.add("hidden");
+    }
+  });
+});
