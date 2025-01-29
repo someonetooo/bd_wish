@@ -40,15 +40,25 @@
         <source src="ForU.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-      <p>This audio contains a heartfelt birthday message for you. Click play to listen!</p>
+
     </section>
 
-    <!-- Calendar Section -->
-    <section class="calendar">
-      <h2>Daily Notes</h2>
-      <p>Remember the 365-day note jar? Here's its digital version!</p>
-      <div class="calendar-grid" id="calendar-grid"></div>
-      <button id="view-note" data-note="This is a special note for today!">View Today's Note</button>
+    <div class="container">
+        <h1>💕 Daily Note Calendar(15 Feb 2025 - 14 Feb 2026) 💕</h1>
+        <p>Remember the 365-day note jar? Here's its digital version!</p>
+        <div class="calendar" id="calendar"></div>
+    </div>
+
+    <!-- Modal for showing notes -->
+    <div id="note-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="note-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
       <p>In an endless garden of flowers, I will always pick you.</p>
     </section>
   </div>
