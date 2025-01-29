@@ -3,53 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Jaweria!</title>
+  <meta name="description" content="Personalized birthday wishes with audio messages, notes, and more!">
+  <title>Birthday Wishes</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;500&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <!-- Birthday Image with Lighting Effect -->
-    <div class="image-container">
-      <div class="light-effect"></div>
-      <img src="image.webp" alt="Birthday Decor" class="birthday-image">
-    </div>
+    <!-- Cake and Balloons Section -->
+    <section class="celebration">
+      <img src="image.webp" alt="Birthday Celebration with Cake and Balloons" class="cake">
+    </section>
 
-    <!-- Birthday Wish -->
-    <div class="wish-container">
-      <h1 class="urdu-wish">وقت تمہیں زندہ رکھے,<br>بہاریں تم پر فدا ہو جائے,<br>رحمتوں کے دروازے تم پر کھلیں اور انہیں کبھی بند ہونے کا حکم نہ ملے۔<br>بے سکونی کا سایے اندھے اور بہرے ہو جائے,<br>اور انہیں تم تک آنے کی راہ نہ دکھائی دے۔<br>جنم دن مبارک ہو!</h1>
-      <h2 class="english-wish">Happy Birthday to the one who means the world to me. Today is all about celebrating you, the beautiful soul that makes every day so much brighter. Have the most amazing birthday—you deserve nothing less!</h2>
-    </div>
+    <!-- Wishes Section -->
+    <section class="wishes">
+      <h2>My Wishes for You</h2>
+      <p class="urdu-wish">
+        وقت تمھیں زندہ رکھے,<br>
+        بہاریں تم پر فدا ہو جائیں,<br>
+        رحمتوں کے دروازے تم پر کھلیں<br>
+        اور انہیں کبھی بند ہونے کا حکم نہ ملے,<br>
+        بے سکونی کا سایہ اندھے اور بہرے ہو جائیں,<br>
+        اور انہیں تم تک آنے کی راہ نہ دکھائی دے,<br>
+        جنم دن مبارک ہو!
+      </p>
+      <p class="english-wish">
+        Happy Birthday to the one who means the world to me.<br>
+        Today is all about celebrating you, the beautiful soul that makes every day so much brighter.<br>
+        most amazing birthday—you deserve nothing less!
+      </p>
+    </section>
 
-    <!-- Voice Note -->
-    <div class="voice-note-container">
-      <h3>My Message for You</h3>
+    <!-- Audio Message Section -->
+    <section class="audio-message">
+      <p>Click below to hear my message for you:</p>
       <audio controls>
         <source src="ForU.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-    </div>
+      <p>This audio contains a heartfelt birthday message for you. Click play to listen!</p>
+    </section>
 
-    <!-- Calendar -->
-    <div class="calendar-container">
-      <h2>Daily Notes Calendar</h2>
-      <div id="calendar"></div>
-    </div>
+    <!-- Calendar Section -->
+    <section class="calendar">
+      <h2>Daily Notes</h2>
+      <p>Remember the 365-day note jar? Here's its digital version!</p>
+      <div class="calendar-grid" id="calendar-grid"></div>
+      <button id="view-note" data-note="This is a special note for today!">View Today's Note</button>
+      <p>In an endless garden of flowers, I will always pick you.</p>
+    </section>
+  </div>
 
-    <!-- Hidden Notes Popup -->
-    <div id="note-popup" class="popup">
-      <div class="popup-content">
-        <span id="close-popup">&times;</span>
-        <p id="note-text"></p>
-      </div>
+  <!-- Modal for Notes -->
+  <div id="note-modal" class="hidden">
+    <div class="note-content">
+      <span id="close-modal">&times;</span>
+      <p id="note-text"></p>
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer>
-    <p>Website created with ❤️ by <a href="https://linkedin.com/in/yourusername" target="_blank">Naeem Ullah</a> | <a href="https://github.com/yourusername" target="_blank">GitHub</a></p>
+    <p>&copy; 2025 Birthday Wishes Website | Created by <strong>Naeem Ullah</strong></p>
+    <p>Find me on <a href="https://github.com/naeemullah-datascientist" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/naeem-ullah-930890345/" target="_blank">LinkedIn</a></p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script>
+    // JavaScript for Modal Interaction
+    document.getElementById('view-note').addEventListener('click', function () {
+      const noteText = this.getAttribute('data-note');
+      document.getElementById('note-text').textContent = noteText;
+      document.getElementById('note-modal').classList.remove('hidden');
+    });
+
+    document.getElementById('close-modal').addEventListener('click', function () {
+      document.getElementById('note-modal').classList.add('hidden');
+    });
+  </script>
 </body>
 </html>
