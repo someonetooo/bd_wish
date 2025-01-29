@@ -1,180 +1,200 @@
-/* General Styles */
 body {
-  font-family: 'Quicksand', sans-serif;
-  background-color: #f9dbe7; /* Soft baby pink */
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #ffe7e7, #ffc8c8);
   color: #333;
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: auto;
   padding: 20px;
 }
 
-/* Image Container with Lighting Effect */
-.image-container {
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #ff5e6c;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.celebration {
+  text-align: center;
   position: relative;
-  margin: 20px 0;
 }
 
-.light-effect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 70%);
-  animation: glow 3s infinite alternate;
+.cake {
+  width: 110%;
+  max-width: 440px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(255, 94, 108, 0.7);
+  transition: box-shadow 0.3s ease;
 }
 
-@keyframes glow {
-  0% { opacity: 0.5; }
-  100% { opacity: 1; }
+.cake:hover {
+  box-shadow: 0 12px 30px rgba(255, 94, 108, 0.8);
 }
 
-.birthday-image {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 1;
-}
-
-/* Wish Container */
-.wish-container {
-  margin: 40px 0;
-}
-
-.urdu-wish {
-  font-family: 'Noto Nastaliq Urdu', serif;
-  font-size: 1.8rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-.english-wish {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
-  color: #333;
+.wishes {
   margin-top: 20px;
-}
-
-/* Voice Note Container */
-.voice-note-container {
-  margin: 40px 0;
-}
-
-.voice-note-container h3 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
-  color: #333;
-}
-
-/* Calendar Container */
-.calendar-container {
-  margin: 40px 0;
-}
-
-.calendar-container h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem;
-  color: #333;
-}
-
-#calendar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  background: #ffecec;
   padding: 20px;
-}
-
-.calendar-month {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.calendar-month h3 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.8rem;
+.wishes h2 {
+  color: #ff5e6c;
+}
+
+.urdu-wish {
+  font-size: 1.2rem;
+  direction: rtl;
+  color: #555;
+  margin: 15px 0;
+}
+
+.english-wish {
+  font-size: 1.1rem;
   color: #333;
-  margin-bottom: 10px;
+  margin: 15px 0;
 }
 
-.calendar-days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-}
-
-.calendar-day {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.calendar-day:hover {
-  background-color: #f9dbe7;
-  transform: scale(1.1);
-}
-
-/* Popup Styles */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.popup-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
+.audio-message {
+  margin: 30px 0;
   text-align: center;
-  position: relative;
-  animation: popupFadeIn 0.5s ease-in-out;
 }
 
-@keyframes popupFadeIn {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-#close-popup {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* Footer Styles */
-footer {
+.calendar {
   margin-top: 40px;
-  padding: 20px;
-  background-color: #333;
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.calendar-grid div {
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-grid div:hover {
+  transform: translateY(-5px);
+  background-color: #ffe7e7;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-grid div:active {
+  transform: translateY(1px);
+}
+
+.calendar-grid div.selected {
+  background-color: #ff5e6c;
   color: #fff;
-  font-family: 'Quicksand', sans-serif;
+}
+
+.calendar-grid div.empty {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  padding: 20px;
+  background-color: #ffecec;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 5px 0;
 }
 
 footer a {
-  color: #fff;
+  color: #ff5e6c;
   text-decoration: none;
 }
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* Modal Styles */
+#note-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.note-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: popup 0.3s ease-in-out;
+}
+
+.note-content p {
+  margin: 15px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+#close-modal:hover {
+  color: #ff5e6c;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
