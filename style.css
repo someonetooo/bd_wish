@@ -76,47 +76,63 @@ header h1 {
   text-align: center;
 }
 
+/* Calendar Container */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendar Grid */
 .calendar {
-  margin-top: 40px;
-  text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 10px;
+/* Individual Date Boxes */
+.date {
+    padding: 15px;
+    background: #ff99c8;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+.date:hover {
+    transform: scale(1.1);
+    background: #ff66a3;
 }
 
-.calendar-grid div {
-  padding: 15px;
-  background: #ffffff;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Modal for Notes */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
 }
-
-.calendar-grid div:hover {
-  transform: translateY(-5px);
-  background-color: #ffe7e7;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
 }
-
-.calendar-grid div:active {
-  transform: translateY(1px);
-}
-
-.calendar-grid div.selected {
-  background-color: #ff5e6c;
-  color: #fff;
-}
-
-.calendar-grid div.empty {
-  background-color: transparent;
-  box-shadow: none;
+.close {
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
 }
 
 footer {
@@ -141,60 +157,4 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-}
-
-/* Modal Styles */
-#note-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.note-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  animation: popup 0.3s ease-in-out;
-}
-
-.note-content p {
-  margin: 15px 0;
-  font-size: 1rem;
-  color: #333;
-}
-
-#close-modal {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-#close-modal:hover {
-  color: #ff5e6c;
-}
-
-@keyframes popup {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
