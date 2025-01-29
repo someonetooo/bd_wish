@@ -40,35 +40,26 @@
         <source src="ForU.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-
     </section>
 
-    <div class="container">
-        <h1>💕 Daily Note Calendar(15 Feb 2025 - 14 Feb 2026) 💕</h1>
-        <p>Remember the 365-day note jar? Here's its digital version!</p>
-        <div class="calendar" id="calendar"></div>
+    <!-- Daily Note Calendar Section -->
+    <div class="calendar-container">
+      <h1>💕 Daily Note Calendar (15 Feb 2025 - 14 Feb 2026) 💕</h1>
+      <p>Remember the 365-day note jar? Here's its digital version!</p>
+      <div class="calendar" id="calendar"></div>
     </div>
 
     <!-- Modal for showing notes -->
     <div id="note-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p id="note-text"></p>
-        </div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="note-text"></p>
+      </div>
     </div>
 
     <script src="script.js"></script>
 
-      <p>In an endless garden of flowers, I will always pick you.</p>
-    </section>
-  </div>
-
-  <!-- Modal for Notes -->
-  <div id="note-modal" class="hidden">
-    <div class="note-content">
-      <span id="close-modal">&times;</span>
-      <p id="note-text"></p>
-    </div>
+    <p>In an endless garden of flowers, I will always pick you.</p>
   </div>
 
   <!-- Footer Section -->
@@ -76,19 +67,5 @@
     <p>&copy; 2025 Birthday Wishes Website | Created by <strong>Naeem Ullah</strong></p>
     <p>Find me on <a href="https://github.com/naeemullah-datascientist" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/naeem-ullah-930890345/" target="_blank">LinkedIn</a></p>
   </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // JavaScript for Modal Interaction
-    document.getElementById('view-note').addEventListener('click', function () {
-      const noteText = this.getAttribute('data-note');
-      document.getElementById('note-text').textContent = noteText;
-      document.getElementById('note-modal').classList.remove('hidden');
-    });
-
-    document.getElementById('close-modal').addEventListener('click', function () {
-      document.getElementById('note-modal').classList.add('hidden');
-    });
-  </script>
 </body>
 </html>
