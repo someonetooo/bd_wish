@@ -1,3 +1,39 @@
+// Import Firebase modules
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+// Your Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyC34hFstLYJ1_3xKICJWGAm3tr8T_G5S2U",
+  authDomain: "birthdaywishestracker.firebaseapp.com",
+  projectId: "birthdaywishestracker",
+  storageBucket: "birthdaywishestracker.firebasestorage.app",
+  messagingSenderId: "885197151988",
+  appId: "1:885197151988:web:132a9d413386c863c948a1",
+  measurementId: "G-BBL4Z3H6KX"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+// Function to log visit details
+function logVisit() {
+  const userAgent = navigator.userAgent; // Device and browser info
+  const visitTime = new Date().toLocaleString(); // Current date and time
+
+  // Save visit details to Firebase
+  const visitsRef = ref(database, 'visits');
+  push(visitsRef, {
+    device: userAgent,
+    time: visitTime
+  });
+}
+
+// Log visit when the page loads
+logVisit();
+
+// Calendar and Modal Logic (Existing Code)
 document.addEventListener("DOMContentLoaded", function() {
     const calendar = document.getElementById("calendar");
     const modal = document.getElementById("note-modal");
