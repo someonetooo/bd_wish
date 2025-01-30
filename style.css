@@ -162,30 +162,50 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
+/* Authentication Container */
+#auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-  .cake {
-    width: 100%;
-  }
+#auth-container h2 {
+  color: #ff5e6c;
+}
 
-  .calendar {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  }
+#auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-  .date {
-    padding: 10px;
-    font-size: 14px;
-  }
+#auth-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: #ff5e6c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  .wishes h2 {
-    font-size: 1.5rem;
-  }
+#auth-container button:hover {
+  background: #ff3b4a;
+}
 
-  .urdu-wish, .english-wish {
-    font-size: 1rem;
-  }
+#auth-message {
+  color: red;
+  font-size: 0.9rem;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
 }
