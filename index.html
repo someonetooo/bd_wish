@@ -10,62 +10,75 @@
   <script type="module" src="script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <!-- Cake and Balloons Section -->
-    <section class="celebration">
-      <img src="image.webp" alt="Birthday Celebration with Cake and Balloons" class="cake">
-    </section>
-
-    <!-- Wishes Section -->
-    <section class="wishes">
-      <h2>My Wishes for You</h2>
-      <p class="urdu-wish">
-        وقت تمھیں زندہ رکھے,<br>
-        بہاریں تم پر فدا ہو جائیں,<br>
-        رحمتوں کے دروازے تم پر کھلیں<br>
-        اور انہیں کبھی بند ہونے کا حکم نہ ملے,<br>
-        بے سکونی کا سایہ اندھے اور بہرے ہو جائیں,<br>
-        اور انہیں تم تک آنے کی راہ نہ دکھائی دے,<br>
-        جنم دن مبارک ہو!
-      </p>
-      <p class="english-wish">
-        Happy Birthday to the one who means the world to me.<br>
-        Today is all about celebrating you, the beautiful soul that makes every day so much brighter.<br>
-        most amazing birthday—you deserve nothing less!
-      </p>
-    </section>
-
-    <!-- Audio Message Section -->
-    <section class="audio-message">
-      <p>Click below to hear my message for you:</p>
-      <audio controls>
-        <source src="ForU.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </section>
-
-    <!-- Daily Note Calendar Section -->
-    <div class="calendar-container">
-      <h1>💕 Daily Note Calendar (15 Feb 2025 - 14 Feb 2026) 💕</h1>
-      <p>Remember the 365-day note jar? Here's its digital version!</p>
-      <div class="calendar" id="calendar"></div>
-    </div>
-
-    <!-- Modal for showing notes -->
-    <div id="note-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p id="note-text"></p>
-      </div>
-    </div>
-
-    <p>In an endless garden of flowers, I will always pick you.</p>
+  <!-- Authentication Container -->
+  <div id="auth-container">
+    <h2>Welcome to Birthday Wishes</h2>
+    <input type="email" id="email" placeholder="Email" value="nukhokhar713@gmail.com">
+    <input type="password" id="password" placeholder="Password" value="12345Naeem??">
+    <button id="sign-in">Sign In</button>
+    <button id="sign-up">Sign Up</button>
+    <p id="auth-message"></p>
   </div>
 
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2025 Birthday Wishes Website | Created by <strong>Naeem Ullah</strong></p>
-    <p>Find me on <a href="https://github.com/naeemullah-datascientist" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/naeem-ullah-930890345/" target="_blank">LinkedIn</a></p>
-  </footer>
+  <!-- Website Content (Hidden by Default) -->
+  <div id="content" class="hidden">
+    <div class="container">
+      <!-- Cake and Balloons Section -->
+      <section class="celebration">
+        <img src="image.webp" alt="Birthday Celebration with Cake and Balloons" class="cake">
+      </section>
+
+      <!-- Wishes Section -->
+      <section class="wishes">
+        <h2>My Wishes for You</h2>
+        <p class="urdu-wish">
+          وقت تمھیں زندہ رکھے,<br>
+          بہاریں تم پر فدا ہو جائیں,<br>
+          رحمتوں کے دروازے تم پر کھلیں<br>
+          اور انہیں کبھی بند ہونے کا حکم نہ ملے,<br>
+          بے سکونی کا سایہ اندھے اور بہرے ہو جائیں,<br>
+          اور انہیں تم تک آنے کی راہ نہ دکھائی دے,<br>
+          جنم دن مبارک ہو!
+        </p>
+        <p class="english-wish">
+          Happy Birthday to the one who means the world to me.<br>
+          Today is all about celebrating you, the beautiful soul that makes every day so much brighter.<br>
+          most amazing birthday—you deserve nothing less!
+        </p>
+      </section>
+
+      <!-- Audio Message Section -->
+      <section class="audio-message">
+        <p>Click below to hear my message for you:</p>
+        <audio controls>
+          <source src="ForU.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+      <!-- Daily Note Calendar Section -->
+      <div class="calendar-container">
+        <h1>💕 Daily Note Calendar (15 Feb 2025 - 14 Feb 2026) 💕</h1>
+        <p>Remember the 365-day note jar? Here's its digital version!</p>
+        <div class="calendar" id="calendar"></div>
+      </div>
+
+      <!-- Modal for showing notes -->
+      <div id="note-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="note-text"></p>
+        </div>
+      </div>
+
+      <p>In an endless garden of flowers, I will always pick you.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2025 Birthday Wishes Website | Created by <strong>Naeem Ullah</strong></p>
+      <p>Find me on <a href="https://github.com/naeemullah-datascientist" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/naeem-ullah-930890345/" target="_blank">LinkedIn</a></p>
+    </footer>
+  </div>
 </body>
 </html>
