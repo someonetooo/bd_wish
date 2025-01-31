@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let currentDate = new Date(startDate);
 
   let notes = {
-        "2025-02-15": "I hope today brings you the peace you deserve. Miss you!",
+    "2025-02-15": "I hope today brings you the peace you deserve. Miss you!",
     "2025-02-16": "Each day without you feels incomplete, but I carry your thoughts with me always. Wishing you a calm and beautiful day.",
     "2025-02-17": "We’ve had our ups and downs, but nothing can erase the beautiful moments... Stay happy, Jaweria.",
     "2025-02-18": "Still remember the first time we started talking. Hope you're having a good day.",
