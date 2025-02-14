@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let currentDate = new Date(startDate);
 
   let notes = {
-    "2025-02-15": "Happy Birthday, Jaweria! 🎂✨ Today is all about you—the girl who made my world brighter just by existing. May your day be as beautiful as your soul. 🌹",
+    "2025-02-15": "I hope today brings you the peace you deserve. Miss you!",
   };
 
   while (currentDate <= endDate) {
