@@ -77,42 +77,51 @@ function logVisit() {
 // Log visit when the page loads
 logVisit();
 
-// Calendar and Modal Logic (Existing Code)
+// Calendar and Modal Logic
 document.addEventListener("DOMContentLoaded", function() {
   const calendar = document.getElementById("calendar");
   const modal = document.getElementById("note-modal");
   const noteText = document.getElementById("note-text");
   const closeBtn = document.querySelector(".close");
 
-  let startDate = new Date(2025, 1, 15); // 15 Feb 2025
-  let endDate = new Date(2026, 1, 14);   // 14 Feb 2026
+  // Use UTC dates to avoid timezone issues
+  let startDate = new Date(Date.UTC(2025, 1, 15)); // 15 Feb 2025 (UTC)
+  let endDate = new Date(Date.UTC(2026, 1, 14));   // 14 Feb 2026 (UTC)
   let currentDate = new Date(startDate);
 
   let notes = {
-    "2025-02-15": "I hope today brings you the peace you deserve. Miss you!"  };
+    "2025-02-15": "Happy Birthday, Jaweria! 🎂✨ Today is all about you—the girl who made my world brighter just by existing. May your day be as beautiful as your soul. 🌹",
+  };
 
   while (currentDate <= endDate) {
-    let dateStr = currentDate.toISOString().split('T')[0]; 
+    // Format the date as YYYY-MM-DD (UTC)
+    let dateStr = currentDate.toISOString().split('T')[0];
 
+    // Create a date box for the calendar
     let dateDiv = document.createElement("div");
     dateDiv.className = "date";
-    dateDiv.innerText = currentDate.getDate() + " " + currentDate.toLocaleString('en-us', { month: 'short' });
+    dateDiv.innerText = currentDate.getUTCDate() + " " + currentDate.toLocaleString('en-us', { month: 'short', timeZone: 'UTC' });
 
+    // Add click event to show the note
     dateDiv.addEventListener("click", function() {
       let message = notes[dateStr] || "No special note for today! 😊. Visit after this month ....";
       noteText.innerText = message;
       modal.style.display = "flex";
     });
 
+    // Add the date box to the calendar
     calendar.appendChild(dateDiv);
 
-    currentDate.setDate(currentDate.getDate() + 1); 
+    // Move to the next day (UTC)
+    currentDate.setUTCDate(currentDate.getUTCDate() + 1);
   }
 
+  // Close the modal when the close button is clicked
   closeBtn.onclick = function() {
     modal.style.display = "none";
   };
 
+  // Close the modal when clicking outside of it
   window.onclick = function(event) {
     if (event.target === modal) {
       modal.style.display = "none";
