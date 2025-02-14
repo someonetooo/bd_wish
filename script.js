@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
     dateDiv.innerText = currentDate.getDate() + " " + currentDate.toLocaleString('en-us', { month: 'short' });
 
     dateDiv.addEventListener("click", function() {
-      let message = notes[dateStr] || "No special note for today! 😊";
+      let message = notes[dateStr] || "No special note for today! 😊. Visit after this month ....";
       noteText.innerText = message;
       modal.style.display = "flex";
     });
